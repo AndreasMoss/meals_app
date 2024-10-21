@@ -1,7 +1,10 @@
+//ΔΕ ΛΕΙΤΟΥΡΓΕΙ ΤΟ ΦΙΛΤΕΡΣ ΜΕ ΤΑ ΠΡΟΒΑΙΝΤΕΡ ΕΚΕΙ ΣΤΟ ΣΚΟΟΥΠ
+
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:meals/screens/tabs.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final theme = ThemeData(
   useMaterial3: true,
@@ -13,7 +16,10 @@ final theme = ThemeData(
 );
 
 void main() {
-  runApp(const App());
+  runApp(
+    //we need to wrap the App with the ProviderScope in order to use providers, consumers
+    ProviderScope(child: const App()),
+  );
 }
 
 class App extends StatelessWidget {
